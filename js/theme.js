@@ -143,6 +143,16 @@ function ThemeNav () {
         parent_li.toggleClass('current');
     }
 
+    nav.toggleContentWidth = function() {
+        var content = $('.wy-nav-content');
+        if ( content.hasClass('wy-nav-content-narrow') ) {
+            $('.wy-nav-content-width-toggle').text('Reading Width');            
+        } else {
+            $('.wy-nav-content-width-toggle').text('Full Width');
+        }
+        content.toggleClass('wy-nav-content-narrow');
+    }  
+
     return nav;
 };
 

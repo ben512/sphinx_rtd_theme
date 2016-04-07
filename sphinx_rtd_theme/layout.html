@@ -116,6 +116,9 @@
 
           {% include "searchbox.html" %}
 
+              <button class="wy-nav-content-width-toggle"
+                      onclick="SphinxRtdTheme.StickyNav.toggleContentWidth()">Full Width</button>
+              
           {% endblock %}
         </div>
 
@@ -143,7 +146,7 @@
 
 
       {# PAGE CONTENT #}
-      <div class="wy-nav-content">
+      <div class="wy-nav-content wy-nav-content-narrow">
         <div class="rst-content">
           {% include "breadcrumbs.html" %}
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
