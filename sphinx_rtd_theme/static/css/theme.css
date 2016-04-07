@@ -4629,6 +4629,10 @@ footer span.commit code, footer span.commit .rst-content tt, .rst-content footer
 }
 
 @media screen and (max-width: 768px) {
+  .wy-nav-content-width-toggle {
+    display: none;
+  }
+
   .wy-body-for-nav {
     background: #fcfcfc;
   }
