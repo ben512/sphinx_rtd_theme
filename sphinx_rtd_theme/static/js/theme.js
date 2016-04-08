@@ -52,6 +52,9 @@ function ThemeNav () {
         this.navBar = $('div.wy-side-scroll:first');
         this.win = $(window);
 
+        // Initialize the content width state
+        this.setFullWidth(sessionStorage.getItem("fullwidth") == "true")
+
         // Set up javascript UX bits
         $(document)
             // Shift nav in mobile when clicking the menu.
@@ -144,14 +147,19 @@ function ThemeNav () {
         parent_li.toggleClass('current');
     }
 
-    nav.toggleContentWidth = function() {
-        var content = $('.wy-nav-content');
-        if ( content.hasClass('wy-nav-content-narrow') ) {
-            $('.wy-nav-content-width-toggle').text('Reading Width');            
+    nav.setFullWidth = function(fullwidth) {
+        if ( fullwidth ) {
+            $('.wy-nav-content-width-toggle').text('Switch to Reading Width');
+            $('.wy-nav-content').removeClass('wy-nav-content-narrow');
         } else {
-            $('.wy-nav-content-width-toggle').text('Full Width');
+            $('.wy-nav-content-width-toggle').text('Switch to Full Width');
+            $('.wy-nav-content').addClass('wy-nav-content-narrow');
         }
-        content.toggleClass('wy-nav-content-narrow');
+        sessionStorage.setItem('fullwidth', fullwidth);
+    }
+    
+    nav.toggleContentWidth = function() {
+        nav.setFullWidth($('.wy-nav-content').hasClass('wy-nav-content-narrow'));
     }  
 
     return nav;

@@ -1,3 +1,4 @@
+  
 .wy-affix
   position: fixed
   top: $gutter
@@ -309,6 +310,12 @@
   min-height: 100%
 
 .wy-nav-content
+  display: none
+
+.fixup .wy-nav-content
+  display: inline-block
+
+.wy-nav-content
   padding: $gutter $gutter * 2
   height: 100%
   margin: auto
@@ -316,9 +323,10 @@
 .wy-nav-content-width-toggle
   margin-top: $base-line-height / 2
   width: 100%
-  
+
 .wy-nav-content-narrow
   max-width: 800px
+
 
 .wy-body-mask
   position: fixed
