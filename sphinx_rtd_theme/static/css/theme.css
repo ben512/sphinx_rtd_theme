@@ -4561,13 +4561,14 @@ div[class^='highlight'] pre {
 }
 
 .fixup .wy-nav-content {
-  display: inline-block;
+  display: block;
 }
 
 .wy-nav-content {
   padding: 1.618em 3.236em;
   height: 100%;
   margin: auto;
+  max-width: 100%;
 }
 
 .wy-nav-content-width-toggle {
